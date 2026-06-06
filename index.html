@@ -130,6 +130,7 @@ nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
   transition:all 0.2s;letter-spacing:0.5px;
   cursor:pointer;border:none;background:none;
 }
+
 .nav-link:hover{color:var(--gold);background:rgba(255,215,0,0.08);}
 .btn{
   padding:10px 20px;border-radius:10px;border:none;
@@ -629,6 +630,16 @@ footer{
   .windows-grid{grid-template-columns:repeat(4,1fr);}
   .stats-grid{grid-template-columns:repeat(6,1fr);}
 }
+#ab1{
+  color:var(--text-muted);padding:8px 14px;border-radius:8px;
+  text-decoration:none;font-size:13px;font-weight:500;
+  transition:all 0.2s;letter-spacing:0.5px;
+  cursor:pointer;border:none;background:none;
+}
+
+#ab1:hover{color:var(--gold);background:rgba(255,215,0,0.08);}
+
+
 </style>
 </head>
 <body>
@@ -654,7 +665,7 @@ footer{
     <div class="lava-blob"></div>
   </div>
   <div class="loading-content">
-    <div class="loading-llama">🦙</div>
+    <div class="loading-llama">💸</div>
     <div class="loading-title">LAMA BANK</div>
     <div class="loading-subtitle">VOLCANIC PREMIUM BANKING</div>
     <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
@@ -665,16 +676,17 @@ footer{
 <!-- HEADER -->
 <header>
   <a class="logo" href="#hero">
-    <span class="logo-icon">🦙</span>
+    <span class="logo-icon">💸</span>
     LAMA BANK
   </a>
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   <nav id="main-nav">
-    <button class="nav-link" onclick="scrollTo('about')">About</button>
-    <button class="nav-link" onclick="scrollTo('employees')">Team</button>
-    <button class="nav-link" onclick="scrollTo('reviews')">Reviews</button>
-    <button class="nav-link" onclick="scrollTo('queue')">Queue</button>
-    <button class="nav-link" onclick="scrollTo('stats')">Stats</button>
+   
+    <button class="nav-link" onclick="scrollTo('about')"><a  id="ab1"  href="#about">About</a></button
+    <button class="nav-link" onclick="scrollTo('employees')"><a  id="ab1"  href="#employees">Team</a></button>
+    <button class="nav-link" onclick="scrollTo('reviews')"><a  id="ab1"  href="#reviews">Reviews</a></button>
+    <button class="nav-link" onclick="scrollTo('queue')"><a  id="ab1"  href="#queue">Queue</a></button>
+    <button class="nav-link" onclick="scrollTo('stats')"><a  id="ab1"  href="#stats">Stats</a></button>
   </nav>
   <div class="header-actions">
     <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme (D)">🌙</button>
@@ -817,7 +829,7 @@ footer{
     </div>
     <div id="queue-list" class="queue-list">
       <div class="empty-queue">
-        <div style="font-size:48px;margin-bottom:12px;">🦙</div>
+        <div style="font-size:48px;margin-bottom:12px;">💸</div>
         <div>No one waiting. All clear!</div>
       </div>
     </div>
@@ -857,7 +869,7 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">🦙 LAMA BANK</div>
+  <div class="footer-logo">💸 LAMA BANK</div>
   <p class="footer-text">Transforming Banking Into An Experience Since 1985<br>
   500B+ Assets · 50+ Countries · 15M+ Customers · 98% Happiness</p>
   <p class="footer-copy">© 2025 LAMA BANK. All rights reserved. Member FDIC. Equal Housing Lender.</p>
@@ -870,7 +882,7 @@ footer{
   <div class="modal" style="position:relative;">
     <button class="modal-close" onclick="closeModal('login')">✕</button>
     <div class="modal-header">
-      <div class="modal-title">🦙 Welcome Back</div>
+      <div class="modal-title">💸 Welcome Back</div>
       <div class="modal-sub">Sign in to access all services</div>
     </div>
     <div class="demo-hint">Demo: <strong>demo@lamabank.com</strong> / <strong>demo123</strong></div>
@@ -1094,7 +1106,7 @@ document.querySelectorAll('a,button,.btn').forEach(el=>{
 // PARTICLES
 // =========================================
 const pContainer=document.getElementById('particles');
-const pSymbols=['🔥','✨','💰','🦙','⭐','💎','🌋'];
+const pSymbols=['🔥','✨','💰','💸','⭐','💎','🌋'];
 function createParticle(){
   const p=document.createElement('div');
   p.className='particle';
@@ -1365,7 +1377,7 @@ function renderQueue(){
   const g=document.getElementById('queue-list');
   if(!g)return;
   if(queue.length===0){
-    g.innerHTML=`<div class="empty-queue"><div style="font-size:48px;margin-bottom:12px">🦙</div><div>No one waiting. All clear!</div></div>`;
+    g.innerHTML=`<div class="empty-queue"><div style="font-size:48px;margin-bottom:12px">💸</div><div>No one waiting. All clear!</div></div>`;
     return;
   }
   g.innerHTML=queue.map((t,i)=>`
